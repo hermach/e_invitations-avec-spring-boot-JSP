@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image: linear-gradient(to bottom right, #dff0f1, #bdccd1, #a9b7c1, #98aeb2);
+  background-size: 100% 100vh;
+  background-repeat: no-repeat;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1200px;
+          perspective: 1200px;
+}
+.container .card {
+  background-color: rgba(10, 191, 113, 0.6);
+  width: 420px;
+  min-height: 270px;
+  border-radius: 8px;
+  box-shadow: 26px 33px 121px 0px rgba(0, 0, 0, 0.4);
+  padding: 30px;
+  transition: all .5s ease;
+}
+#card{
+  background-color: rgba(191, 148, 10, 0.6);
+}
+.container .card.challengeChosen {
+  -webkit-transform: rotateY(180deg) translateZ(-70px);
+          transform: rotateY(180deg) translateZ(-70px);
+  min-height: 400px;
+  width: 300px;
+}
+.container .card.challengeChosen .back {
+  display: block;
+  margin-left: -15px;
+}
+.container .card.challengeChosen .welcometext {
+  font-weight: bold;
+  width: 240px;
+  float: right;
+}
+.container .card.challengeChosen h3, .container .card.challengeChosen p, .container .card.challengeChosen .download {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.container .card.challengeChosen .grats {
+  margin-top: 30px;
+  width: 180px;
+  display: block;
+  float: right;
+  font-size: 11px;
+}
+.container .card h3 {
+  color: #fefefe;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: .7;
+}
+.container .card p {
+  color: #272727;
+  font-size: 12px;
+  opacity: .8;
+  line-height: 18px;
+}
+.container .card p.back {
+  display: none;
+  color: #fefefe;
+  cursor: pointer;
+}
+.container .card p.back:hover {
+  opacity: 1;
+}
+.container .card p.back:before {
+  content: "\f104";
+  font-family: 'fontAwesome';
+  opacity: .7;
+  margin-right: 5px;
+}
+.container .card p.download {
+  color: #fefefe;
+  cursor: pointer;
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
+  display: none;
+  font-size: 11px;
+}
+.container .card p.download:hover {
+  opacity: 1;
+}
+.container .card p.download:before {
+  content: "\f019";
+  font-family: 'fontAwesome';
+  opacity: .7;
+  margin-right: 5px;
+}
+.container .card p span {
+  margin-top: 30px;
+  display: block;
+}
+.container .card .btn {
+  display: inline-block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  bottom: 0;
+  padding: 25px;
+  width: 50%;
+  text-align: center;
+  background: rgba(23, 159, 100, 0.6);
+  font-size: 11px;
+  color: rgba(47, 47, 47, 0.4);
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color .3s ease, background-color .2s ease;
+}
+.container .card .btn:hover {
+  color: rgba(47, 47, 47, 0.7);
+  background-color: rgba(23, 159, 100, 0.8);
+}
+.container .card .btn.start {
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.container .card .btn.decline {
+  left: 0;
+  border-bottom-left-radius: 8px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  display: none;
+}
+.container .card .btn.accept {
+  right: 0;
+  border-bottom-right-radius: 8px;
+  display: none;
+}
